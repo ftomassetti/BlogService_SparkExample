@@ -15,6 +15,11 @@ class NewPostPayload implements Validable {
     private List<String> categories = new LinkedList<>();
     private String content;
 
+    /**
+     * <p>isValid.</p>
+     *
+     * @return a boolean.
+     */
     public boolean isValid() {
         return title != null && !title.isEmpty() && content != null && !content.isEmpty();
     }

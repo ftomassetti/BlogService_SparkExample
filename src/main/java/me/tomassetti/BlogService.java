@@ -23,21 +23,37 @@ import static spark.Spark.put;
 import static spark.Spark.delete;
 import static spark.Spark.port;
 
+/**
+ * <p>BlogService class.</p>
+ *
+ * @author ftomassetti
+ * @author rajakolli
+ * @version 1:0
+ */
 public class BlogService 
 {
 
-    private static final Logger logger = Logger.getLogger(BlogService.class.getCanonicalName());
+    private static final Logger LOGGER = Logger.getLogger(BlogService.class.getCanonicalName());
+    
+    private BlogService(){
+        
+    }
 
+    /**
+     * <p>main.</p>
+     *
+     * @param args an array of {@link java.lang.String} objects.
+     */
     public static void main( String[] args) {
         CommandLineOptions options = new CommandLineOptions();
         new JCommander(options, args);
 
-        logger.finest("Options.debug = " + options.debug);
-        logger.finest("Options.database = " + options.database);
-        logger.finest("Options.dbHost = " + options.dbHost);
-        logger.finest("Options.dbUsername = " + options.dbUsername);
-        logger.finest("Options.dbPort = " + options.dbPort);
-        logger.finest("Options.servicePort = " + options.servicePort);
+        LOGGER.finest("Options.debug = " + options.debug);
+        LOGGER.finest("Options.database = " + options.database);
+        LOGGER.finest("Options.dbHost = " + options.dbHost);
+        LOGGER.finest("Options.dbUsername = " + options.dbUsername);
+        LOGGER.finest("Options.dbPort = " + options.dbPort);
+        LOGGER.finest("Options.servicePort = " + options.servicePort);
 
         port(options.servicePort);
 

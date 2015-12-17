@@ -7,9 +7,11 @@ import java.util.UUID;
  *
  * @author ftomassetti
  * @since Mar 2015
+ * @version 1:0
  */
 public class RandomUuidGenerator implements UuidGenerator {
     
+    /** {@inheritDoc} */
     @Override
     public UUID generate() {
         return UUID.randomUUID();

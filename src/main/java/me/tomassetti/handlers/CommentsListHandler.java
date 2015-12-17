@@ -10,12 +10,24 @@ import java.util.stream.Collectors;
 
 import static j2html.TagCreator.*;
 
+/**
+ * <p>CommentsListHandler class.</p>
+ *
+ * @author ftomassetti
+ * @version 1:0
+ */
 public class CommentsListHandler extends AbstractRequestHandler<EmptyPayload> {
 
+    /**
+     * <p>Constructor for CommentsListHandler.</p>
+     *
+     * @param model a {@link me.tomassetti.model.Model} object.
+     */
     public CommentsListHandler(Model model) {
         super(EmptyPayload.class, model);
     }
 
+    /** {@inheritDoc} */
     @Override
     protected Answer processImpl(EmptyPayload value, Map<String, String> urlParams, boolean shouldReturnHtml) {
         UUID post = UUID.fromString(urlParams.get(":uuid"));
@@ -26,7 +38,7 @@ public class CommentsListHandler extends AbstractRequestHandler<EmptyPayload> {
             String html = body().with(
                     h1("Comments for post " + post),
                     div().with(
-                            model.getAllCommentsOn(post).stream().map((comment) ->
+                            model.getAllCommentsOn(post).stream().map(comment ->
                                     div().with(
                                             h2(comment.getAuthor()),
                                             p(comment.getContent()))

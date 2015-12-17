@@ -6,6 +6,12 @@ import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
+/**
+ * <p>Post class.</p>
+ *
+ * @author tomassetti
+ * @version 1:0
+ */
 @Data
 public class Post {
     private UUID post_uuid;

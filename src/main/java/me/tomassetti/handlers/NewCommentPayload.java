@@ -11,6 +11,11 @@ class NewCommentPayload implements Validable {
     private String author;
     private String content;
 
+    /**
+     * <p>isValid.</p>
+     *
+     * @return a boolean.
+     */
     public boolean isValid() {
         return author != null && !author.isEmpty() && content != null && !content.isEmpty();
     }

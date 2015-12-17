@@ -9,15 +9,27 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.UUID;
 
+/**
+ * <p>PostsEditHandler class.</p>
+ *
+ * @author ftomassetti
+ * @version 1:0
+ */
 public class PostsEditHandler extends AbstractRequestHandler<EditPostPayload> {
 
     private Model model;
 
+    /**
+     * <p>Constructor for PostsEditHandler.</p>
+     *
+     * @param model a {@link me.tomassetti.model.Model} object.
+     */
     public PostsEditHandler(Model model) {
         super(EditPostPayload.class, model);
         this.model = model;
     }
 
+    /** {@inheritDoc} */
     @Override
     protected Answer processImpl(EditPostPayload value, Map<String, String> urlParams, boolean shouldReturnHtml) {
         if (!urlParams.containsKey(":uuid")) {
