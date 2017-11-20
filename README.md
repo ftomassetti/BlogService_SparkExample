@@ -28,7 +28,7 @@ If you want to use the docker container
 Launch it like this:
 
 ```bash
-docker run -p 6000:5432 a3c93947f86e
+docker run -p 6000:5432 blog_db_container
 ```
 
 and the application like this:
